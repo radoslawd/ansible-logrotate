@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: James Belchamber
+  description: A role that installs logrotate and manages configuration
+  license: GPLv3
+  min_ansible_version: 1.8
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  categories:
+  - system

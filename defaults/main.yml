@@ -1,0 +1,17 @@
+---
+logrotate_rotation_interval: "weekly"
+logrotate_rotation_amount: 4
+logrotate_applications:
+  - name: syslog
+    path:
+    - "/var/log/cron"
+    - "/var/log/maillog"
+    - "/var/log/messages"
+    - "/var/log/secure"
+    - "/var/log/spooler"
+    options:
+    - "missingok"
+    - "sharedscripts"
+    scripts:
+    - type: postrotate
+      script: "/bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true"

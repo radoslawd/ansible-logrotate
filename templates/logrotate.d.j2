@@ -1,0 +1,17 @@
+{% if item.path is mapping %}
+{% for path in item.path %}
+{{ path }}
+{% endfor %}
+{
+{% else %}
+{{ item.path }} {
+{% endif %}
+{% for option in item.options %}
+    {{ option }}
+{% endfor %}
+{% for script in item.scripts %}
+    {{ script.type }}
+        {{ script.script }}
+    endscript
+{% endfor %}
+}
