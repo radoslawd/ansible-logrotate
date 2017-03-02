@@ -4,7 +4,7 @@
 {% endfor %}
 {
 {% else %}
-{{ item.path }} {
+{{ item.path | join(' ') }} {
 {% endif %}
 {% for option in item.options %}
     {{ option }}
